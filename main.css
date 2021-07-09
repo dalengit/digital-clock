@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    background-color: rgb(58, 58, 58);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock {
+    background-color: rgb(29, 28, 28);
+    width: 400px; 
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.clock-time, .clock-ampm {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+}
+
+.clock-time {
+    font-size: 70px;
+}
+
+.clock-ampm {
+    padding-left: .2em;
+}
