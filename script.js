@@ -8,15 +8,16 @@ class DigitalClock {
 
         setInterval(() => {
             this.update();
-        }, 500);
+        }, 1000);
     }
 
     // Method to update HTML 
     update () {
         const parts = this.getTimeParts();
         // Add in '0' character 
+        const secondFormatted = parts.second.toString().padStart(2, '0');
         const minuteFormatted = parts.minute.toString().padStart(2, "0");
-        const timeFormatted = `${parts.hour}:${minuteFormatted}`;
+        const timeFormatted = `${parts.hour}:${minuteFormatted}:${secondFormatted}`;
         // If isAm = true then print AM if not print PM 
         const amPm = parts.isAM ? "AM" : "PM";
 
@@ -29,6 +30,7 @@ class DigitalClock {
         const now = new Date(); 
 
         return {
+            second: now.getSeconds(),
             hour: now.getHours() % 12 || 12,
             minute: now.getMinutes(),
             isAM: now.getHours() < 12
